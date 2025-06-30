@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Particle Simulation</title>
+  <script type="text/javascript" src="draw.js"></script>
+  <style>
+    body {
+      background: #555555;
+      color: #ddd;
+      font-family: sans-serif;
+    }
+    canvas {
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+    .controls {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <div>Opposite charges attract? <input type="checkbox" id="polar" value="1" checked="false" /></div>
+    <div>k (force constant): <input type="text" id="k" value="50" /></div>
+    <div>Minimum distance multiplier: <input type="text" id="kk" value="5" /></div>
+    <div>Inertia damping: <input type="text" id="inert" value="0.5" /></div>
+    <div>64-bit rounding factor: <input type="text" id="symmetry" value="10000000" /></div>
+    <div>Center offset X: <input type="text" id="cx" value="100" />, Y: <input type="text" id="cy" value="100" /></div>
+    <div>Apply offset to all particles? <input type="checkbox" id="sd" value="1" checked="true" /></div>
+    <div>Use linear decay (1/r)? <input type="checkbox" id="linearDecay" checked="true" /></div>
+    <div style="margin-top:8px;">
+      <input type="button" value="Start" onclick="startSimulation();" />
+      <input type="button" value="Stop" onclick="stopSimulation();" />
+      <input type="button" value="Reset Field" onclick="init();" />
+    </div>
+  </div>
+
+  <canvas id="myCanvas" width="800" height="800"></canvas>
+  <div id="console-log0"></div>
+  <div><a href="https://github.com/xcontcom">© github.com/xcontcom</a></div>
+</body>
+</html>
